@@ -1,24 +1,26 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es6": true,
-  },
-  "plugins": [
-    "react",
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
   ],
-  "globals": {
-    "graphql": false,
+  plugins: [
+    'react',
+  ],
+  env: {
+    browser: true,
+    commonjs: true,
+    node: true,
+    es6: true
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "jsx": true,
-    },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
   },
-  "rules": {
-    semi: ["error", "always"],
-    quotes: ["error", "single", { "avoidEscape": true }]
+  globals: {
+    '__PATH_PREFIX__': true,
+  },
+  rules: {
+    strict: ['error', 'global'],
+    'react/prop-types': 'warn',
   }
 }

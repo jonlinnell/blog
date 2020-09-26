@@ -34,7 +34,6 @@ const theme = {
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
     h1: {
       fontFamily: [FONT_FACE_SANS_SERIF, 'sans-serif'].join(','),
-      weight: 100,
     },
     blockquote: {
       ...scale(1 / 6),

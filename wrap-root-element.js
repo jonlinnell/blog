@@ -4,6 +4,7 @@ import { Code } from './src/components/code';
 import { preToCodeBlock } from 'mdx-utils';
 
 const components = {
+  // eslint-disable-next-line react/display-name
   pre: preProps => {
     const props = preToCodeBlock(preProps);
 
