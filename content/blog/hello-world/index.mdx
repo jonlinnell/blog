@@ -25,20 +25,18 @@ Like this:
 
 ### Code
 ```js
-const name = 'Jon';
+  const numbers = [1, 2, 3, 4, 5, '6', '7'];
 
-const person = {
-  name,
-  location: 'London'
-}
+  const actualNumbers = numbers
+    .map(number => Number(number));
 ```
 
 ### Live code!
 
-```js react-live
+```jsx react-live
 const handleClick = () => window.alert(`The date is: ${(new Date()).toISOString()}`);
 
-const Button = () => <button type="button" label="show the date" onClick={handleClick}>What's the date?</button>;
+const Button = () => <button data-test={true} type="button" label="show the date" onClick={handleClick}>What's the date?</button>;
 
 render(<Button />);
 ```
