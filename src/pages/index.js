@@ -44,29 +44,28 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex;
 
 export const pageQuery = graphql`
-query AllPostsQuery {
-  site {
-    siteMetadata {
-      title
+  query AllPostsQuery {
+    site {
+      siteMetadata {
+        title
+      }
     }
-  }
-  allMdx(
-    filter: {frontmatter: {published: {ne: false}}}
-    sort: {fields: [frontmatter___date], order: DESC}) {
-    edges {
-      node {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          published
-          title
+    allMdx(
+      filter: {frontmatter: {published: {ne: false}}}
+      sort: {fields: [frontmatter___date], order: DESC}) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            published
+            title
+          }
         }
       }
     }
   }
-}
-
 `;
