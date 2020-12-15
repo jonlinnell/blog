@@ -70,6 +70,13 @@ const theme = {
     {
       // Fix punctuation color for HTML
       types: ["punctuation"],
+      style: {
+        color: "#fdf9f3"
+      }
+    },
+    {
+      // Fix punctuation color for HTML
+      types: ["punctuation"],
       languages: ["markup"],
       style: {
         color: "#fdf9f3"

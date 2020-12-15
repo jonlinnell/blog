@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import { css } from '@emotion/core';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
+import { rhythm, TOKENS } from '../utils/design';
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -24,16 +25,32 @@ const BlogIndex = ({ data, location }) => {
         return (
           <div key={node.fields.slug}>
             <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
+              css={css`
+                font-family: ${TOKENS.FONT_FACE_SANS_SERIF};
+                font-size: 1.44rem;
+                margin-bottom: ${rhythm(1 / 4)};
+              `}
             >
-              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+              <Link css={css`
+                box-shadow: none;
+                text-decoration: none;
+              `} to={node.fields.slug}>
                 {title}
               </Link>
             </h3>
-            <small>{node.frontmatter.date}</small>
-            <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            <small
+              css={css`
+
+              `}
+            >{node.frontmatter.date}</small>
+            <p
+              css={css`
+                margin: 0;
+                padding: 0;
+                margin-bottom: ${rhythm(3 / 2)};
+              `}
+              dangerouslySetInnerHTML={{ __html: node.excerpt }}
+            />
           </div>
         );
       })}

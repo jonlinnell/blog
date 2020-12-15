@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { css } from '@emotion/core';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm, scale } from '../utils/typography';
+
+import { rhythm, scale } from '../utils/design';
 
 const BlogPostTemplate = ({ location, data, pageContext }) => {
   const post = data.mdx;
@@ -17,14 +19,21 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
       <SEO title={post.frontmatter.title} description={post.excerpt} />
 
       <article>
-        <h1>{post.frontmatter.title}</h1>
+        <h1
+          css={css`
+            font-size: 2.8rem;
+            font-weight: 200;
+            line-height: 3rem;
+          `}
+        >{post.frontmatter.title}</h1>
         <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
+          css={
+            css`
+              font-size: 0.93rem;
+              display: block;
+              margin-bottom: ${rhythm(1)};
+              margin-top: ${rhythm(-1)};
+            `}
         >
           {post.frontmatter.date}
         </p>
@@ -32,20 +41,22 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
       </article>
 
       <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
+        css={
+          css`
+            margin-bottom: ${rhythm(1)};
+          `}
       />
       <Bio />
 
       <ul
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          listStyle: 'none',
-          padding: 0,
-        }}
+        css={
+          css`
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+          `}
       >
         <li>
           {previous && (

@@ -1,8 +1,9 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
+import { css } from '@emotion/core';
 
-import { rhythm } from '../utils/typography';
+import { rhythm } from '../utils/design';
 
 const Bio = () => (
   <StaticQuery
@@ -12,22 +13,27 @@ const Bio = () => (
 
       return (
         <div
-          style={{
-            display: 'flex',
-            marginBottom: rhythm(2.5),
-          }}
+          css={css`
+            display: flex;
+            margin-bottom: ${rhythm(2.5)};
+          `}
         >
           <Image
             fixed={data.avatar.childImageSharp.fixed}
             alt={author}
-            style={{
-              marginRight: rhythm(1 / 2),
-              marginBottom: 0,
-              minWidth: 50,
-              borderRadius: '100%',
-            }}
+            css={css`
+              margin-right: ${rhythm(1 / 2)};
+              margin-bottom: 0;
+              min-width: 50px;
+              border-radius: 100%;
+            `}
           />
-          <p>
+          <p
+            css={css`
+              margin: 0;
+              padding: 0;
+            `}
+          >
             Written by <strong>{author}</strong>, a general purpose software nerd, living
             and working in London.
             {' '}

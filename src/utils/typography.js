@@ -1,10 +1,5 @@
 import Typography from 'typography';
 import { MOBILE_MEDIA_QUERY } from './breakpoints';
-import {
-  FONT_FACE_SERIF,
-  FONT_FACE_SANS_SERIF,
-  FONT_FACE_MONOSPACE,
-} from './design';
 
 const theme = {
   title: "Jon's Crappy Blog Theme",
@@ -102,13 +97,10 @@ const theme = {
   }),
 };
 
-const typography = new Typography(theme);
+const typography = new Typography();
 
 // Hot reload typography in development.
-if (process.env.NODE_ENV !== 'production') {
-  typography.injectStyles();
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   typography.injectStyles();
+// }
 
-export const rhythm = typography.rhythm;
-export const scale = typography.scale;
-export default typography;
