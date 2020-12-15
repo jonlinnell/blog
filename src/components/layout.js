@@ -7,6 +7,15 @@ import themeContext from '../utils/theme';
 import globalStyles from '../utils/global-styles';
 import { MIN_TABLET_MEDIA_QUERY } from '../utils/breakpoints';
 
+const things = [
+  '🧀',
+  '🥖',
+  '☕️',
+  '🍌',
+  '🥃',
+  '🍻',
+];
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
 
@@ -86,9 +95,9 @@ const Layout = ({ location, title, children }) => {
             font-size: 0.8rem;
           `}
         >
-          &copy; {new Date().getFullYear()}, Built with
-          {' '}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          &copy; {new Date().getFullYear()}, Built with{' '}
+          {things[Math.floor(Math.random() * things.length)]}
+          in London.
         </footer>
       </main>
     </>
