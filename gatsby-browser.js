@@ -1,5 +1,5 @@
+/* eslint-disable import/prefer-default-export */
 import 'normalize.css';
-import { wrapRootElement as wrap } from './wrap-root-element';
+import './src/styles/global.css';
 
-export const wrapRootElement = wrap;
-  
+export { default as wrapRootElement } from './wrap-root-element';
